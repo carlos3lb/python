@@ -8,8 +8,8 @@ try:
     model = Model()
     model.load_spends('datos.csv')
 
-    a = model.personal[2017].spends_by_type('casa')
-    b = model.personal[2016].spends_by_type('casa')
+    a = model.personal[2017].spends_by_type('total')
+    b = model.comun[2016].spends_by_type('total')
     print("%.2f" % (a+b))
 
 except Exception as ex:
