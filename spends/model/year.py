@@ -25,6 +25,14 @@ class Year:
     # ----
 
     # Metodo recuperar los gastos del año en funcion del tipo
+    def monthly_spends_by_type(self, type):
+        spends = []
+        for k,month in self.months.items():
+            spends.append(month.get_spend(type))
+        return spends
+    # ----
+
+    # Metodo recuperar los gastos del año en funcion del tipo
     def spends_by_type(self, type):
         total = 0
         for k,month in self.months.items():
@@ -32,7 +40,7 @@ class Year:
         return total
     # ----
 
-        # Metodo recuperar los gastos del mes del año en funcion del tipo
+    # Metodo recuperar los gastos del mes del año en funcion del tipo
     def spends_by_month_type(self, month, type):
         return self.months[str(month)].get_spend(type)
     # ----
