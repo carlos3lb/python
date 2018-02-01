@@ -97,7 +97,6 @@ class Model:
         y = []
         if (owner == 'fide'):
             for i in range(2016, year):
-                print(i)
                 if i in self.personal:
                     ac += self.get_total_by_type_owner_year(type, owner, i)
             y = self.personal[year].monthly_spends_by_type(type)
@@ -117,3 +116,6 @@ class Model:
         else:
             raise Exception("Error: Wrong owner")
     # ----
+
+    
+
