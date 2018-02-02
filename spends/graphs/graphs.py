@@ -32,3 +32,8 @@ def genarate_yearly_comparative(total, comun, personal, year):
 
     fig = dict(data=data, layout=layout)
     py.image.save_as(fig, filename='yearly_comparative.png')
+
+    #py.image.save_as(fig, filename='a-simple-plot.png')
+    #layout = go.Layout(title='A Simple Plot', width=800, height=640)
+    #fig = dict(data=[data], layout=layout)
+    #py.image.save_as(fig, filename='yearly_comparativea.png')

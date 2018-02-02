@@ -42,12 +42,16 @@ class Model:
     # ----
 
     # Metodo para recuperar el total de gastos
-    def get_total_by_type(self, type):
+    def get_total_by_type_owner(self, type, owner):
         total = 0
-        for k,year in self.personal.items():
-            total += self.get_total_by_type_owner_year(type, 'fide', k)
-        for k,year in self.comun.items():
-            total += self.get_total_by_type_owner_year(type, 'comun', k)
+        if (owner == 'fide'):
+            for k,year in self.personal.items():
+                total += self.get_total_by_type_owner_year(type, 'fide', k)
+        elif (owner == 'comun'):
+            for k,year in self.comun.items():
+                total += self.get_total_by_type_owner_year(type, 'comun', k)
+        else:
+            raise Exception("Error: Wrong owner")
         return total
     # ----
 
